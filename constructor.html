@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Конструктор термосумки — Kibo.ua</title>
+  <meta name="description" content="Онлайн-конструктор Kibo.ua: оберіть модель, розміри, матеріал і одразу побачте орієнтовну вартість.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><img src="images/logo.svg" alt="Логотип Kibo.ua" width="42" height="42"><span>Kibo<em>.ua</em></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Меню</button>
+      <nav id="nav" aria-label="Головне меню">
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a class="active" href="constructor.html">Конструктор</a></li>
+          <li><a href="materials.html">Про матеріали</a></li>
+          <li><a href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <p class="eyebrow">Індивідуальне пошиття</p>
+        <h1>Конструктор термосумки</h1>
+        <p>Задайте параметри, і ціна перерахується одразу. Потім надішліть заявку, і менеджер зв'яжеться з вами.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container builder">
+        <div class="preview">
+          <svg viewBox="0 0 400 280" role="img" aria-label="Схематичне зображення сумки з вашими параметрами">
+            <rect width="400" height="280" fill="#EDEDF3"/>
+            <g id="bag"></g>
+          </svg>
+          <p><strong>Колір тканини</strong></p>
+          <div class="swatches">
+            <input type="radio" name="color" id="c1" value="#F05D23" form="builder-form" checked><label for="c1" style="background:#F05D23" title="Помаранчевий"></label>
+            <input type="radio" name="color" id="c2" value="#1D3557" form="builder-form"><label for="c2" style="background:#1D3557" title="Темно-синій"></label>
+            <input type="radio" name="color" id="c3" value="#2B2D42" form="builder-form"><label for="c3" style="background:#2B2D42" title="Графітовий"></label>
+            <input type="radio" name="color" id="c4" value="#CA4616" form="builder-form"><label for="c4" style="background:#CA4616" title="Теракотовий"></label>
+            <input type="radio" name="color" id="c5" value="#6b7280" form="builder-form"><label for="c5" style="background:#6b7280" title="Сірий"></label>
+          </div>
+          <div class="total">
+            <small>Орієнтовна вартість</small>
+            <div class="sum" id="sum">0 грн</div>
+            <small>Ціна за одиницю: <span id="unit">0 грн</span> · об'єм: <span id="liters">0 л</span> · знижка: <span id="disc">0%</span></small>
+          </div>
+        </div>
+
+        <form id="builder-form" data-demo action="#" method="post">
+          <fieldset>
+            <legend>1. Модель</legend>
+            <label for="model">Форма сумки</label>
+            <select id="model" name="model">
+              <option value="cube">Куб</option>
+              <option value="pack">Рюкзак</option>
+              <option value="flat">Горизонтальна</option>
+            </select>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. Розміри, см</legend>
+            <div class="row3">
+              <div><label for="length">Довжина</label><input type="number" id="length" name="length" min="20" max="80" value="40" required></div>
+              <div><label for="width">Ширина</label><input type="number" id="width" name="width" min="15" max="60" value="30" required></div>
+              <div><label for="height">Висота</label><input type="number" id="height" name="height" min="10" max="60" value="30" required></div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>3. Матеріали</legend>
+            <div class="row">
+              <div>
+                <label for="fabric">Зовнішня тканина</label>
+                <select id="fabric" name="fabric">
+                  <option value="oxford">Oxford 600D</option>
+                  <option value="cordura">Cordura</option>
+                  <option value="pvc">ПВХ (легко мити)</option>
+                </select>
+              </div>
+              <div>
+                <label for="insul">Утеплювач</label>
+                <select id="insul" name="insul">
+                  <option value="foam">Піна 10 мм</option>
+                  <option value="foil">Піна з фольгою 10 мм</option>
+                  <option value="thick">Піна з фольгою 20 мм</option>
+                </select>
+              </div>
+            </div>
+            <label class="check"><input type="checkbox" id="logo" name="logo"> Нанесення логотипу (+50 грн за шт.)</label>
+          </fieldset>
+
+          <fieldset>
+            <legend>4. Заявка</legend>
+            <div class="row">
+              <div><label for="qty">Кількість, шт.</label><input type="number" id="qty" name="qty" min="1" max="1000" value="1" required></div>
+              <div><label for="phone">Телефон</label><input type="tel" id="phone" name="phone" placeholder="+380" required></div>
+            </div>
+            <label for="name">Ім'я або назва компанії</label>
+            <input type="text" id="name" name="name" required>
+            <label for="logofile">Логотип (векторний файл, за потреби)</label>
+            <input type="file" id="logofile" name="logofile" accept=".svg,.ai,.eps,.pdf">
+            <input type="hidden" id="summary" name="summary">
+          </fieldset>
+
+          <button class="btn" type="submit">Надіслати заявку</button>
+          <p class="form-ok" role="status">Дякуємо! Заявку отримано, менеджер зв'яжеться з вами найближчим часом.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Kibo.ua</h3>
+          <p>Термосумки для ресторанів, кур'єрських служб та медичних установ. Власне виробництво в Україні.</p>
+        </div>
+        <div>
+          <h3>Сторінки</h3>
+          <ul>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="constructor.html">Конструктор</a></li>
+            <li><a href="materials.html">Про матеріали</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Зв'язок</h3>
+          <ul>
+            <li><a href="tel:+380441234567">+38 (044) 123-45-67</a></li>
+            <li><a href="mailto:info@kibo.ua">info@kibo.ua</a></li>
+            <li>Пн–Пт, 9:00–18:00</li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">© 2026 Kibo.ua. Навчальний проєкт, КПІ ім. Ігоря Сікорського.</p>
+    </div>
+  </footer>
+  <script src="js/constructor.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

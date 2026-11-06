@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакти — Kibo.ua</title>
+  <meta name="description" content="Контакти Kibo.ua: адреса цеху, телефон, email та форма для заявки.">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@500;600;700&family=Inter:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><img src="images/logo.svg" alt="Логотип Kibo.ua" width="42" height="42"><span>Kibo<em>.ua</em></span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Меню</button>
+      <nav id="nav" aria-label="Головне меню">
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="catalog.html">Каталог</a></li>
+          <li><a href="constructor.html">Конструктор</a></li>
+          <li><a href="materials.html">Про матеріали</a></li>
+          <li><a class="active" href="contacts.html">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <div class="container">
+        <p class="eyebrow">Зворотний зв'язок</p>
+        <h1>Контакти</h1>
+        <p>Напишіть, що вам потрібно: купити сумки зі складу, пошити партію або проконсультуватись щодо матеріалів.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <div>
+          <h2>Як нас знайти</h2>
+          <ul class="contact-list">
+            <li><span>Адреса цеху</span>м. Київ, вул. Промислова, 12</li>
+            <li><span>Телефон</span><a href="tel:+380441234567">+38 (044) 123-45-67</a></li>
+            <li><span>Email</span><a href="mailto:info@kibo.ua">info@kibo.ua</a></li>
+            <li><span>Графік роботи</span>Пн–Пт: 9:00–18:00<br>Сб–Нд: вихідні</li>
+          </ul>
+        </div>
+
+        <form data-demo action="#" method="post">
+          <h2>Залишити заявку</h2>
+          <div class="row">
+            <div><label for="name">Ім'я</label><input type="text" id="name" name="name" required></div>
+            <div><label for="phone">Телефон</label><input type="tel" id="phone" name="phone" placeholder="+380" required></div>
+          </div>
+          <div>
+            <label for="topic">Що вас цікавить</label>
+            <select id="topic" name="topic">
+              <option>Купівля зі складу</option>
+              <option>Індивідуальне пошиття</option>
+              <option>Нанесення логотипу</option>
+              <option>Консультація щодо матеріалів</option>
+            </select>
+          </div>
+          <div>
+            <label for="msg">Повідомлення</label>
+            <textarea id="msg" name="message" placeholder="Розміри коробок, кількість, терміни"></textarea>
+          </div>
+          <button class="btn" type="submit">Надіслати</button>
+          <p class="form-ok" role="status">Дякуємо! Повідомлення надіслано, ми зв'яжемося з вами.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>Kibo.ua</h3>
+          <p>Термосумки для ресторанів, кур'єрських служб та медичних установ. Власне виробництво в Україні.</p>
+        </div>
+        <div>
+          <h3>Сторінки</h3>
+          <ul>
+            <li><a href="catalog.html">Каталог</a></li>
+            <li><a href="constructor.html">Конструктор</a></li>
+            <li><a href="materials.html">Про матеріали</a></li>
+            <li><a href="contacts.html">Контакти</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Зв'язок</h3>
+          <ul>
+            <li><a href="tel:+380441234567">+38 (044) 123-45-67</a></li>
+            <li><a href="mailto:info@kibo.ua">info@kibo.ua</a></li>
+            <li>Пн–Пт, 9:00–18:00</li>
+          </ul>
+        </div>
+      </div>
+      <p class="copy">© 2026 Kibo.ua. Навчальний проєкт, КПІ ім. Ігоря Сікорського.</p>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

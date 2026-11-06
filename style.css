@@ -1,0 +1,215 @@
+/* Kibo.ua - основні стилі */
+:root {
+  --white: #ffffff;
+  --bg: #ededf3;
+  --orange: #f05d23;
+  --orange-dark: #ca4616;
+  --blue: #1d3557;
+  --text: #2b2d42;
+  --radius: 4px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: "Inter", "Open Sans", Arial, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Rubik", "Montserrat", Arial, sans-serif;
+  color: var(--blue);
+  line-height: 1.2;
+  margin: 0 0 .6em;
+}
+h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); font-weight: 600; }
+h3 { font-size: 1.15rem; font-weight: 600; }
+
+p { margin: 0 0 1em; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--blue); }
+
+.container { width: min(1120px, 92%); margin: 0 auto; }
+.section { padding: 72px 0; }
+.section.alt { background: var(--bg); }
+.section-head { max-width: 640px; margin-bottom: 36px; }
+.eyebrow {
+  font-family: "Fira Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .8rem;
+  font-weight: 600;
+  color: var(--orange-dark);
+  margin-bottom: 10px;
+}
+
+/* кнопки */
+.btn {
+  display: inline-block;
+  font-family: "Fira Sans", sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 13px 26px;
+  border: 2px solid var(--orange);
+  background: var(--orange);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background .2s, transform .2s, border-color .2s;
+}
+.btn:hover { background: var(--orange-dark); border-color: var(--orange-dark); transform: translateY(-2px); }
+.btn.ghost { background: transparent; color: var(--blue); border-color: var(--blue); }
+.btn.ghost:hover { background: var(--blue); color: var(--white); border-color: var(--blue); }
+
+/* шапка */
+.site-header {
+  position: sticky; top: 0; z-index: 20;
+  background: var(--white);
+  border-bottom: 1px solid #dcdce6;
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 68px; gap: 20px; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: "Rubik", sans-serif; font-weight: 700; font-size: 1.5rem; color: var(--blue); }
+.logo em { font-style: normal; color: var(--orange); }
+.site-header nav ul { list-style: none; display: flex; gap: 6px; margin: 0; padding: 0; }
+.site-header nav a {
+  display: block; padding: 8px 14px; text-decoration: none; color: var(--text);
+  font-weight: 500; border-bottom: 2px solid transparent; transition: color .2s, border-color .2s;
+}
+.site-header nav a:hover { color: var(--orange-dark); }
+.site-header nav a.active { color: var(--orange-dark); border-bottom-color: var(--orange); }
+.nav-toggle {
+  display: none; background: none; border: 2px solid var(--blue); color: var(--blue);
+  font-family: "Fira Sans", sans-serif; font-weight: 600; padding: 6px 14px; border-radius: var(--radius); cursor: pointer;
+}
+
+/* головний екран */
+.hero { background: var(--bg); padding: 64px 0 72px; }
+.hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center; }
+.hero p.lead { font-size: 1.1rem; max-width: 520px; }
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 26px; }
+.hero img { border-radius: var(--radius); box-shadow: 14px 14px 0 var(--blue); }
+
+.facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid #cfcfdc; margin-top: 48px; }
+.facts div { padding: 20px 20px 0 0; }
+.facts strong { display: block; font-family: "Rubik", sans-serif; font-size: 1.8rem; color: var(--orange-dark); }
+.facts span { font-size: .92rem; }
+
+/* картки */
+.grid { display: grid; gap: 24px; }
+.grid.three { grid-template-columns: repeat(3, 1fr); }
+.grid.two { grid-template-columns: repeat(2, 1fr); }
+
+.card {
+  background: var(--white); border: 1px solid #dcdce6; border-radius: var(--radius);
+  overflow: hidden; display: flex; flex-direction: column;
+  transition: transform .25s, box-shadow .25s;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 12px 26px rgba(29, 53, 87, .14); }
+.card .body { padding: 18px 20px 22px; display: flex; flex-direction: column; flex: 1; }
+.card .meta { font-size: .9rem; margin-bottom: 12px; }
+.card .meta li { margin-bottom: 2px; }
+.card ul { padding-left: 18px; margin: 0 0 14px; }
+.card .bottom { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.price { font-family: "Fira Sans", sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--orange-dark); }
+.stock { font-size: .82rem; background: var(--bg); padding: 3px 9px; border-radius: 20px; display: inline-block; margin-bottom: 8px; }
+
+.steps { counter-reset: s; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.steps li { counter-increment: s; border-top: 3px solid var(--orange); padding-top: 14px; }
+.steps li::before { content: "0" counter(s); font-family: "Rubik", sans-serif; font-weight: 700; color: var(--blue); font-size: 1.3rem; display: block; margin-bottom: 6px; }
+
+/* блок із закликом */
+.cta { background: var(--blue); color: var(--white); padding: 56px 0; }
+.cta h2 { color: var(--white); margin-bottom: .3em; }
+.cta-inner { display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+
+/* фільтри каталогу */
+.filters { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px; }
+.filters button {
+  font-family: "Fira Sans", sans-serif; font-weight: 500; font-size: .95rem;
+  background: var(--white); border: 1.5px solid var(--blue); color: var(--blue);
+  padding: 8px 18px; border-radius: 30px; cursor: pointer; transition: all .2s;
+}
+.filters button:hover, .filters button.on { background: var(--blue); color: var(--white); }
+
+/* сторінка-заголовок */
+.page-title { background: var(--bg); padding: 48px 0 40px; border-bottom: 1px solid #dcdce6; }
+.page-title p { max-width: 620px; margin: 0; }
+
+/* таблиця */
+table { width: 100%; border-collapse: collapse; background: var(--white); }
+th, td { text-align: left; padding: 12px 14px; border-bottom: 1px solid #dcdce6; font-size: .95rem; }
+th { background: var(--blue); color: var(--white); font-family: "Rubik", sans-serif; font-weight: 500; }
+.table-wrap { overflow-x: auto; }
+
+/* форми */
+form { display: grid; gap: 16px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+label { display: block; font-weight: 600; font-size: .92rem; margin-bottom: 5px; }
+input, select, textarea {
+  width: 100%; font: inherit; color: var(--text);
+  padding: 11px 12px; border: 1.5px solid #b9b9c9; border-radius: var(--radius); background: var(--white);
+  transition: border-color .2s, box-shadow .2s;
+}
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--orange); box-shadow: 0 0 0 3px rgba(240, 93, 35, .18); }
+textarea { min-height: 120px; resize: vertical; }
+.check { display: flex; gap: 10px; align-items: center; font-weight: 500; }
+.check input { width: auto; }
+.form-ok { display: none; background: #e6f2ea; border-left: 4px solid #2f8a4f; padding: 12px 16px; border-radius: var(--radius); }
+.form-ok.show { display: block; }
+
+/* конструктор */
+.builder { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: start; }
+.preview { background: var(--bg); border-radius: var(--radius); padding: 20px; position: sticky; top: 90px; }
+.preview svg { width: 100%; height: auto; }
+.swatches { display: flex; gap: 10px; margin-top: 10px; }
+.swatches input { position: absolute; opacity: 0; width: 0; }
+.swatches label { width: 34px; height: 34px; border-radius: 50%; border: 3px solid var(--white); box-shadow: 0 0 0 1px #9a9aae; cursor: pointer; margin: 0; }
+.swatches input:checked + label { box-shadow: 0 0 0 3px var(--orange); }
+.total { background: var(--blue); color: var(--white); padding: 18px 20px; border-radius: var(--radius); margin-top: 16px; }
+.total .sum { font-family: "Fira Sans", sans-serif; font-size: 2rem; font-weight: 700; }
+.total small { display: block; opacity: .8; }
+fieldset { border: 1px solid #dcdce6; border-radius: var(--radius); padding: 16px; margin: 0; }
+fieldset > * + * { margin-top: 12px; }
+legend { font-family: "Rubik", sans-serif; font-weight: 500; color: var(--blue); padding: 0 8px; }
+.row3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+
+/* контакти */
+.contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 48px; }
+.contact-list { list-style: none; padding: 0; margin: 0; }
+.contact-list li { padding: 12px 0; border-bottom: 1px solid #dcdce6; }
+.contact-list span { display: block; font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; color: var(--orange-dark); font-family: "Fira Sans", sans-serif; }
+
+/* підвал */
+.site-footer { background: var(--text); color: #d7d7e2; padding: 44px 0 20px; font-size: .94rem; }
+.site-footer a { color: #d7d7e2; }
+.site-footer a:hover { color: var(--orange); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 32px; }
+.site-footer h3 { color: var(--white); font-size: 1rem; }
+.site-footer ul { list-style: none; padding: 0; margin: 0; }
+.site-footer li { margin-bottom: 6px; }
+.copy { border-top: 1px solid #44465c; margin-top: 28px; padding-top: 16px; font-size: .85rem; }
+
+/* адаптивність */
+@media (max-width: 900px) {
+  .hero-grid, .builder, .contact-grid { grid-template-columns: 1fr; }
+  .grid.three { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .facts { grid-template-columns: repeat(2, 1fr); }
+  .preview { position: static; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 720px) {
+  .nav-toggle { display: block; }
+  .site-header nav { display: none; position: absolute; top: 68px; left: 0; right: 0; background: var(--white); border-bottom: 1px solid #dcdce6; }
+  .site-header nav.open { display: block; }
+  .site-header nav ul { flex-direction: column; padding: 8px 4%; }
+  .grid.three, .grid.two, .row, .row3, .steps, .footer-grid { grid-template-columns: 1fr; }
+  .section { padding: 52px 0; }
+}
